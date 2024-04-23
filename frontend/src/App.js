@@ -1,14 +1,18 @@
 import "./App.css";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+import { BrowserRouter as Router, Routes } from "react-router-dom";
 
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import { Toaster } from "react-hot-toast";
-import ProductDetails from "./components/product/ProductDetails";
+
+import useUserRoutes from "./components/routes/userRoutes";
+import useAdminRoutes from "./components/routes/adminRoutes";
 
 function App() {
+  const userRoutes = useUserRoutes();
+  const adminRoutes = useAdminRoutes();
+
   return (
     <Router>
       <div className="App">
@@ -16,8 +20,8 @@ function App() {
         <Header />
         <div className="container">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/product/:id" element={<ProductDetails />} />
+            {userRoutes}
+            {adminRoutes}
           </Routes>
         </div>
         <Footer />
