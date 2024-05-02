@@ -8,8 +8,7 @@
     "start": "node backend/app.js",
     "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/app.js",
     "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/app.js",
-    "seeder": "node backend/seeder/seeder.js",
-    "vercel-build": "eko run"
+    "seeder": "node backend/seeder/seeder.js"
   },
   "author": "Eko Firlianto",
   "license": "ISC",
